@@ -2,7 +2,7 @@
 24.12.17~      SSAFY project
 
 
-#### 24.12.17
+## 24.12.17
 테트리스 메인메뉴 만들기
 
 ```C++
@@ -146,3 +146,58 @@ public:
 };
 
 ```
+<br>
+<hr>
+<br>
+
+## 24.12.18
+블럭생성, 낙하, 회전
+
+## 2일차 학습내용
+
+### 1. #include<conio.h>
+
+콘솔 입출력 관련 함수들을 제공<br>
+getch() : 키보드 입력을 한 문자 단위로 읽고, 화면에 표시하지 않음<br>
+kbhit() : 키보드 입력이 있는지 확인<br>
+getche() : 키보드 입력을 읽고, 화면에 표시<br>
+
+![alt text](image.png)
+
+### 2. #include <windows.h>
+
+도스 창을 제어하기 위한<br>
+콘솔 창 제어, 윈도우 창 생성, 메시지 처리 등
+
+### 3. #include <cstdlib>
+
+ C라이브러리의 유틸리티 함수들을 제공<br>
+
+ rand() : 0에서 RAND_MAX 사이의 난수를 생성
+
+ ### 4. #include <ctime>
+
+ 시간과 날짜와 관련된 함수를 제공
+
+ ### 5. 블럭생성
+ ```c++
+/*블럭 생성*/
+void createBlock() {
+    srand((unsigned int)time(NULL));
+    int select = rand() % 5 + 1; // 1 ~ 5 블럭
+    if(select == 1) blockObject = new Block1(); // 1번 블럭 생성
+    else if(select == 2)blockObject = new Block2(); // 2번 블럭 생성
+    else if (select == 3)blockObject = new Block3(); // 3번 블럭 생성
+    else if (select == 4)blockObject = new Block4(); // 4번 블럭 생성
+    else if (select == 5)blockObject = new Block5(); // 5번 블럭 생성
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            int Y = j + blockObject->getY();
+            int X = i + blockObject->getX(); 
+            table[Y][X] = blockObject->getShape(blockObject->getRotationCount(), i, j);
+            //블럭 객체를 테이블에 업데이트
+        }
+    }
+    }
+ ```

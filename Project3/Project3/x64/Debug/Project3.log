@@ -1,2 +1,4 @@
 ﻿  practice1.cpp
+C:\Users\Admin\Desktop\Tetris\Project3\Project3\practice1.cpp(38,19): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Admin\Desktop\Tetris\Project3\Project3\practice1.cpp(38,21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
   Project3.vcxproj -> C:\Users\Admin\Desktop\Tetris\Project3\x64\Debug\Project3.exe
